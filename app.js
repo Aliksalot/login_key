@@ -20,18 +20,11 @@ app.use(session({
     saveUninitialized: false
 }));
 
-app.use(auth.authenticate)
-
 const secret_key_len = 8
 
 
 app.get('/login', (req, res) => {
     const pagePath = path.join(__dirname, './public/html/login.html')
-    res.sendFile(pagePath)
-})
-
-app.get('/admin', (req, res) => {
-    const pagePath = path.join(__dirname, './public/html/admin.html')
     res.sendFile(pagePath)
 })
 
@@ -50,6 +43,13 @@ app.post('/login/try_key', (req, res) => {
     }catch(e){
         console.log(`Error with trying key ${e}`)
     }
+})
+
+app.use(auth.authenticate)
+
+app.get('/admin', (req, res) => {
+    const pagePath = path.join(__dirname, './public/html/admin.html')
+    res.sendFile(pagePath)
 })
 
 app.post('/admin/new_key', (req, res) => {
