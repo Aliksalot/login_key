@@ -22,8 +22,15 @@ app.use(session({
 
 const secret_key_len = 8
 
+app.get('/:a', (req, res) =>{
+    res.redirect('/page/home')
+})
 
-app.get('/login', (req, res) => {
+app.get('/page/home', (req, res) => {
+    res.send('Meow')
+})
+
+app.get('/page/login', (req, res) => {
     const pagePath = path.join(__dirname, './public/html/login.html')
     res.sendFile(pagePath)
 })
@@ -47,7 +54,7 @@ app.post('/login/try_key', (req, res) => {
 
 app.use(auth.authenticate)
 
-app.get('/admin', (req, res) => {
+app.get('/page/admin', (req, res) => {
     const pagePath = path.join(__dirname, './public/html/admin.html')
     res.sendFile(pagePath)
 })
