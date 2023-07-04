@@ -1,0 +1,26 @@
+{
+  "name": "login_key",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aliksalot/login_key.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aliksalot/login_key/issues"
+  },
+  "homepage": "https://github.com/Aliksalot/login_key#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongodb": "^5.6.0",
+    "session": "^0.1.0"
+  }
+}
